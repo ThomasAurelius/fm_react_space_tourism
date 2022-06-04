@@ -1,38 +1,1054 @@
-.App {
-  text-align: center;
+/* ---------------- */
+/* Reset            */
+/* ---------------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+picture,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  font-family: "Barlow", serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
   min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--ff-sans-normal);
+  font-size: var(--fs-400);
+  background-color: hsl(var(--clr-dark));
+  color: hsl(var(--clr-white));
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hide Property */
+[hidden] {
+  display: none;
+}
+
+/* Customer header sizes */
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+h1 {
+  margin: 0.67em 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+/* Defaults for images */
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-style: none;
+}
+
+picture {
+  display: contents;
+}
+
+source {
+  display: none;
+}
+
+svg {
+  overflow: hidden;
+}
+
+/* Block Behavior */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/* ------------------- */
+/* End of reset CSS    */
+/* ------------------- */
+
+/* ----------------- */
+/* Custom Properties */
+/* ----------------- */
+
+:root {
+  /* colors */
+  --clr-dark: 230 35% 5%;
+  --clr-accent: 231 77% 90%;
+  --clr-white: 0 0% 100%;
+
+  /* font sizes */
+  --fs-900: 9.375rem;
+  --fs-800: 6.25rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+
+  /* font-families */
+  --ff-serif: "Bellefair", serif;
+  --ff-sans-cond: "Barlow Condensed", sans-serif;
+  --ff-sans-normal: "Barlow", sans-serif;
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* General */
+
+.flex {
   display: flex;
-  flex-direction: column;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container {
+  padding-inline: 2em;
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.skip-to-content {
+  position: absolute;
+  z-index: 9999;
+  background-color: hsl(var(--clr-white));
+  color: hsl(var(--clr-dark));
+  padding: .5em 1em;
+  margin-inline: auto;
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+  transform: translateY(0);
+}
+
+/* apply to everything but the first child */
+.flow>*:not(:first-child) {
+  margin-top: 1rem var(--flow-space, 1rem);
+}
+
+/* Colors */
+
+.bg-dark {
+  background-color: hsl(var(--clr-dark));
+}
+
+.bg-accent {
+  background-color: hsl(var(--clr-accent));
+}
+
+.bg-white {
+  background-color: hsl(var(--clr-white));
+}
+
+.text-dark {
+  color: hsl(var(--clr-dark));
+}
+
+.text-accent {
+  color: hsl(var(--clr-accent));
+}
+
+.text-white {
+  color: hsl(var(--clr-white));
+}
+
+/* Typography      */
+
+.ff-serif {
+  font-family: var(--ff-serif);
+}
+
+.ff-sans-cond {
+  font-family: var(--ff-sans-cond);
+}
+
+.ff-sans-normal {
+  font-family: var(--ff-sans-normal);
+}
+
+.letter-spacing-1 {
+  letter-spacing: 4.72px;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2.7px;
+}
+
+.letter-spacing-3 {
+  letter-spacing: 2.35px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
+}
+
+.numbered-title {
+  text-transform: uppercase;
+  font-size: var(--fs-500);
+  font-family: var(--ff-sans-cond);
+  letter-spacing: 4.72px;
+}
+
+.numbered-title span {
+  margin-right: 0.5em;
+  font-weight: 700;
+  color: hsl(var(--clr-white) / 0.25);
+}
+
+/* ---------------- */
+/* Components       */
+/* ---------------- */
+
+.interactive {
+  justify-content: space-around;
+}
+
+.large-button {
+  position: relative;
+  padding: 0 2em;
+  display: grid;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  aspect-ratio: 1;
+  text-decoration: none;
+  border-radius: 50%;
+  z-index: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.large-button::after {
+  content: "";
+  position: absolute;
+  background-color: hsl(var(--clr-white) / 0.15);
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 500ms linear, transform 0.5s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.large-button:hover::after,
+.large-button:focus::after {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+.nav-header {
+  justify-content: space-between;
+  padding-top: 40px;
+  margin-inline: 20px;
+  align-items: center;
+
+}
+
+.explore-button {
+  margin-top: 5rem;
+}
+
+.logo {
+  flex-shrink: 0;
+  margin-left: 30px;
+  order: -2;
+}
+
+.primary-navigation {
+  --gap: 2rem;
+  --underline-gap: 2rem;
+  list-style: none;
+  padding: 20px 100px 20px 120px;
+  margin: 0;
+  background-color: hsl(var(--clr-accent)/.08);
+
+}
+
+
+
+@supports (backdrop-filter: blur(1rem)) {
+  .primary-navigation {
+    background: hsl(var(--clr-white) / 0.05);
+    backdrop-filter: blur(1.5rem);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.primary-navigation a>span {
+  font-weight: 700;
+  margin-right: 10px;
+  color: hsl(var(--clr-white) / 0.25);
+}
+
+.mobile-nav-toggle {
+  display: none;
+  background-color: transparent;
+  background-image: url('./assets/shared/icon-hamburger.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  ;
+  margin: 20px 20px 0 0;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+
+.underline-indicators>* {
+  padding: var(--underline_gap, 1rem) 0;
+}
+
+.underline-indicators>*:hover,
+.underline-indicators>*:focus {
+  border-bottom: 2px solid hsl(var(--clr-white) / 0.5);
+}
+
+.underline-indicators>.active,
+.underline-indicators>[aria-selected="true"] {
+  border-bottom: 2px solid hsl(var(--clr-white));
+  color: hsl(var(--clr-white));
+}
+
+.tab-buttons>a {
+  text-decoration: none;
+  border: none;
+  --gap: 3em;
+  color: hsl(var(--clr-accent));
+  background-color: transparent;
+}
+
+.tab-buttons>button:hover,
+.tab-buttons>button:focus {
+  cursor: pointer;
+}
+
+.dot-indicators>* {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background-color: hsl(var(--clr-white) / 0.25);
+  border: none;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.dot-indicators>*:hover,
+.dot-indicators>*:focus {
+  background-color: hsl(var(--clr-accent));
+
+}
+
+.dot-indicators>[aria-selected="true"] {
+  background-color: hsl(var(--clr-white));
+}
+
+.numbered-indicators {
+  flex-direction: column;
+}
+
+.numbered-indicators>* {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  width: 50px;
+  cursor: pointer;
+  background-color: hsl(var(--clr-dark));
+  border: none;
+  outline: 1px solid hsl(var(--clr-white) / 0.25);
+}
+
+.numbered-indicators a {
+  text-decoration: none;
+  color: hsl(var(--clr-white));
+}
+
+.numbered-indicators>[aria-selected="true"] {
+  background-color: hsl(var(--clr-white));
+  color: hsl(var(--clr-dark));
+}
+
+.numbered-indicators>[aria-selected="true"]>a {
+  color: hsl(var(--clr-dark));
+}
+
+.numbered-indicators>*:hover,
+.numbered-indicators>*:focus {
+  outline: 1px solid hsl(var(--clr-white));
+}
+
+/* ----------- */
+/* HOME        */
+/* ----------- */
+
+.bg-container-home {
+  background-image: url('./assets/home/background-home-desktop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+.home-container {
+  margin-top: 0;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 15vh;
+  padding-bottom: 50px;
+}
+
+.home-text {
+  text-align: left;
+  justify-self: center;
+  align-items: center;
+
+}
+
+.home-text p {
+  margin-top: 40px;
+  max-width: 450px;
+  line-height: 1.6;
+}
+
+/* ------------------ */
+/* Destination        */
+/* ------------------ */
+
+.bg-container-destination {
+  background-image: url('./assets/destination/background-destination-desktop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+.destination-container {
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 90vw;
+  padding: 0;
+
+}
+
+.destination-title {
+  margin-top: 50px;
+  margin-bottom: 40px;
+
+}
+
+.destination-title span {
+  color: hsl(var(--clr-white) / 0.25);
+  font-weight: 700;
+}
+
+.destination-name {
+  margin-block: 20px;
+}
+
+
+
+#moon .destination-img {
+  margin: 40px auto 0;
+  background-image: url('./assets/destination/image-moon.png');
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+#mars .destination-img {
+  margin: 40px auto 0;
+  background-image: url('./assets/destination/image-mars.png');
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+#europa .destination-img {
+  margin: 40px auto 0;
+  background-image: url('./assets/destination/image-europa.png');
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+#titan .destination-img {
+  margin: 40px auto 0;
+  background-image: url('./assets/destination/image-titan.png');
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+
+.destination-facts {
+  margin-block: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+
+/* ------------- */
+/* Crew          */
+/* ------------- */
+
+.bg-container-crew {
+  background-image: url('./assets/crew/background-crew-desktop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+.crew-text {
+  max-width: 45vw;
+  margin-right: 50px;
+}
+
+.crew-text h2 {
+  margin-top: 40px;
+  color: hsl(var(--clr-white) / 0.5)
+}
+
+.crew-text h3 {
+  margin-block: 30px;
+}
+
+.crew-text p {
+  line-height: 2rem;
+}
+
+.crew-img-container {
+  margin-top: -100px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+
+.crew.dot-indicators {
+  margin-block: 50px;
+}
+
+
+/* ------------------- */
+/* Technology          */
+/* ------------------- */
+
+.bg-tech-container {
+  background-image: url('./assets/technology/background-technology-desktop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+.landscape {
+  display: none;
+}
+
+.portrait {
+  max-width: 45vw;
+}
+
+.tech-container {
+  grid-template-columns: 1fr 3fr 3fr;
+  align-items: center;
+}
+
+.numbered-indicators {
+  margin: 0 auto;
+  padding-inline: 30px;
+}
+
+.tech-text {
+  margin-right: 50px;
+  ;
+}
+
+
+
+/* --------------- */
+/* Media Q - large */
+/* --------------- */
+
+@media (min-width: 950px) {
+  .nav-header::after {
+    content: '';
+    display: block;
+    position: relative;
+    height: 1px;
+    width: 100%;
+    background: hsl(var(--clr-white) / 0.25);
+    order: -1;
+    margin-right: -3rem;
   }
+}
+
+/* ---------------- */
+/* Media Q - tablet */
+/* ---------------- */
+
+
+
+@media (max-width: 950px) {
+  .bg-container-home {
+    background-image: url('./assets/home/background-home-tablet.jpg');
+  }
+
+  .nav-header {
+    margin-top: 0
+  }
+
+  .home-text {
+    text-align: center;
+  }
+
+  .primary-navigation {
+    padding-inline: 40px;
+  }
+
+  .primary-navigation span {
+    display: none;
+  }
+
+  .primary-navigation a {
+    font-size: .9em;
+  }
+
+  .home-container {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+
+  .home-text {
+    margin: 0 auto;
+  }
+
+  .large-button {
+    margin-bottom: 50px;
+  }
+
+  .bg-container-destination {
+    background-image: url('./assets/destination/background-destination-tablet.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .destination-title {
+    text-align: center;
+  }
+
+  .destination-container {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  .destination-text {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .tab-buttons {
+    justify-content: center;
+
+  }
+
+  .bg-container-crew {
+    background-image: url('./assets/crew/background-crew-tablet.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .crew-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  .crew-img-container {
+    flex-shrink: 1;
+    margin-top: 10px;
+  }
+
+  .crew-img {
+    height: 400px;
+  }
+
+  .crew-text {
+    margin: 0;
+    max-width: 80vw;
+  }
+
+  .crew-text h3 {
+    font-size: 3rem;
+  }
+
+  .dot-indicators {
+    justify-content: center;
+  }
+
+  .bg-tech-container {
+    background-image: url('./assets/technology/background-technology-tablet.jpg');
+  }
+
+
+
+  .tech-container {
+    flex-direction: column;
+  }
+
+  .portrait {
+    display: none
+  }
+
+  .landscape {
+    display: block;
+    order: 1;
+    width: 100%;
+  }
+
+  .numbered-indicators {
+    order: 2;
+    flex-direction: row;
+    margin-block: 0;
+  }
+
+  .tech-text {
+    order: 3;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 65%;
+    line-height: 2rem;
+    ;
+  }
+
+  .tech-text h3 {
+    margin-block: 20px;
+  }
+
+  .tech-text p {
+    margin-bottom: 50px;
+  }
+
+  .tech-img {
+    width: 100%
+  }
+}
+
+@media (max-width: 650px) {
+
+  .nav-header {
+    position: relative;
+
+  }
+
+  .primary-navigation li span {
+    display: inline;
+    color: hsl(var(--clr-white));
+  }
+
+  .primary-navigation.underline-indicators>.active {
+    border: 0;
+  }
+
+  .primary-navigation {
+    --gap: 1rem;
+    --underline-gap: 1rem;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    height: 100vh;
+    inset: 0 0 0 40%;
+    z-index: 2;
+    padding-top: 150px;
+    transform: translateX(100%);
+    transition: transform .4s ease;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0)
+  }
+
+  .logo {
+    padding: 10px 0 0 10px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .mobile-nav-toggle {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    display: block;
+    z-index: 3
+  }
+
+  .home-text {
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .home-text h1 {
+    font-size: var(--fs-400);
+  }
+
+  .home-text span {
+    text-align: center;
+    font-size: var(--fs-800);
+  }
+
+  .logo {
+    margin-top: 15px;
+  }
+
+  .destination-title {
+    margin-top: 80px;
+  }
+
+  .destination-container {
+
+    margin-top: 40px;
+  }
+
+  .crew-text h3 {
+    font-size: 2.7rem;
+  }
+
+  .dot-indicators>* {
+    margin: 20px;
+  }
+
+  .bg-tech-container {
+    background-image: url('./assets/technology/background-technology-mobile.jpg');
+
+  }
+
+  img.landscape {
+    flex-shrink: 0;
+  }
+}
+
+
+
+@media (max-width: 450px) {
+
+  .bg-container-home {
+    background-image: url('./assets/home/background-home-mobile.jpg');
+  }
+
+  .bg-container-destination {
+    background-image: url('./assets/destination/background-destination-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .destination-container {
+    width: 95vw;
+    padding: 0;
+    margin-top: 0;
+  }
+
+
+
+  .destination-title {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .destination-name {
+    font-size: 5rem;
+  }
+
+  #moon .destination-img {
+
+    width: 275px;
+    height: 275px;
+  }
+
+  .bg-container-crew {
+    background-image: url('./assets/crew/background-crew-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .crew-text h3 {
+    font-size: 2.4rem;
+  }
+
+  .bg-tech-container {
+    background-image: url('./assets/technology/background-technology-mobile.jpg');
+  }
+
+
 }
