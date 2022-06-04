@@ -5,8 +5,7 @@ import CrewCommander from "../assets/crew/image-douglas-hurley.png"
 
 export default function Crew() {
    return (
-      <>
-      
+      <>      
          <main id="main" className='bg-container-crew'>
          <Header />
             <div className="container destination-container ">
@@ -34,7 +33,7 @@ export default function Crew() {
             <div className="crew-img-container">
             <img className="crew-img" src={CrewCommander} alt="Crew Commander Douglas Hurley" />
             </div>
-            </div>
+         </div>
     </main>
       </>
    )
