@@ -18,7 +18,7 @@ export default function DestinationEuropa() {
             <a href="./destinationMars" id="mars-btn"
               className="  bg-dark letter-spacing-2  text-white ff-sans-cond uppercase">Mars</a>
             <a href="./destinationEuropa" id="europa-btn"
-              className=" bg-dark letter-spacing-2  text-white ff-sans-cond uppercase">Europa</a>
+              className=" bg-dark letter-spacing-2 active text-white ff-sans-cond uppercase">Europa</a>
             <a href="./destinationTitan" id="titan-btn"
               className="bg-dark letter-spacing-2  text-white ff-sans-cond uppercase">Titan</a>
           </div>

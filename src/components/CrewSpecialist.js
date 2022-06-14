@@ -27,7 +27,7 @@ export default function CrewSpecialist() {
                 <a href="./crew" className=""><span className="sr-only">Commander</span></a>
                 <a href="./crewEngineer" className=""><span className="sr-only">Flight Engineer</span></a>
                 <a href="./crewPilot" className=""><span className="sr-only">Pilot</span></a>
-                <a href="./crewSpecialist" className=""><span className="sr-only">Specialist</span></a>
+                <a href="./crewSpecialist" className="current"><span className="sr-only">Specialist</span></a>
               </div>
             </div>
             <div className="crew-img-container">

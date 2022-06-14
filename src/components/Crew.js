@@ -24,7 +24,7 @@ export default function Crew() {
                      commander of Crew Dragon Demo-2.
                   </p>
                   <div className="flex dot-indicators crew" >
-                     <a href="./crew"  id="commander" className=""><span className="sr-only">Commander</span></a>
+                     <a href="./crew"  id="commander" className="current"><span className="sr-only">Commander</span></a>
                      <a href="./crewEngineer" id="engineer" className=""><span className="sr-only">Flight Engineer</span></a>
                      <a href="./crewPilot" id="pilot" className=""><span className="sr-only">Pilot</span></a>
                      <a href="./crewSpecialist" id="Specialist" className=""><span className="sr-only">Specialist</span></a>

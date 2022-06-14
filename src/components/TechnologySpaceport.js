@@ -15,7 +15,7 @@ export default function TechnologySpaceport() {
       <div className="tech-container flex">
          <div className="flex numbered-indicators" >
          <button ><a href="./technologyVehicle">1</a></button>
-         <button ><a href="./technologySpaceport">2</a></button>
+         <button className='current'><a href="./technologySpaceport">2</a></button>
          <button ><a href="./technology">3</a></button>
          </div>
          <div className="tech-text">

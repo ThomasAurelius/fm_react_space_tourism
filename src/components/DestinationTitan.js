@@ -17,8 +17,8 @@ export default function DestinationTitan() {
             <a href="./destination" id="moon-btn" className="letter-spacing-2 bg-dark text-white ff-sans-cond uppercase">Moon</a>
             <a href="./destinationMars" id="mars-btn" className="  bg-dark letter-spacing-2  text-white ff-sans-cond uppercase">Mars</a>
             <a href="./destinationEuropa" id="europa-btn"
-               className=" bg-dark letter-spacing-2  text-white ff-sans-cond uppercase">Europa</a>
-            <a href="./destinationTitan" id="titan-btn" className=" bg-dark letter-spacing-2  text-white ff-sans-cond uppercase">Titan</a>
+               className=" bg-dark letter-spacing-2 text-white ff-sans-cond uppercase">Europa</a>
+            <a href="./destinationTitan" id="titan-btn" className=" bg-dark letter-spacing-2 active text-white ff-sans-cond uppercase">Titan</a>
          </div>
       
          <h2 className="destination-name uppercase fs-800">Titan</h2>

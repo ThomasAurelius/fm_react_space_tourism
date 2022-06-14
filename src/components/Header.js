@@ -1,15 +1,23 @@
 import React from 'react'
 import logo from '../assets/shared/logo.svg'
 import '../App.css'
-import { Link } from 'react-router-dom'
 
 export default function Header() {
 
 const [visibility, setVisibility] = React.useState(false)
 
-const swapVisible = (prevVisibility) => {
-   setVisibility(!prevVisibility)
+const swapVisible = () => {
+   setVisibility(!visibility)
+
 }
+
+let classes
+
+if (visibility) {
+      classes = 'primary-navigation primary-navigation-visible underline-indicators flex'
+   } else {
+      classes = 'primary-navigation underline-indicators flex'
+   }
 
 console.log(visibility)
 
@@ -23,8 +31,8 @@ console.log(visibility)
                </div>
                <button onClick={swapVisible} id="mobile-nav-toggle" className="mobile-nav-toggle" aria-controls="primary-navigation"
                aria-expanded="false"><span className="sr-only">Menu</span></button>
-               <ul id="primary-navigation" data-visible="false" className="primary-navigation underline-indicators flex">
-                  <li className="active"><a className="text-white uppercase letter-spacing-2" href="/"><span>00</span>Home</a>
+               <ul id="primary-navigation"  className={classes}>
+                  <li className=""><a className="text-white uppercase letter-spacing-2" href="/"><span>00</span>Home</a>
                   </li>
                   <li><a className="text-white uppercase letter-spacing-2" href="./destination"><span>01</span>Destination</a>
                   </li>
