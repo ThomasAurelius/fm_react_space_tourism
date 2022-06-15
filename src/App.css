@@ -346,6 +346,10 @@ section {
   line-height: 1.1;
 }
 
+.fw-700 {
+  font-weight: 700;
+}
+
 .numbered-title {
   text-transform: uppercase;
   font-size: var(--fs-500);
@@ -425,7 +429,6 @@ section {
 }
 
 
-
 @supports (backdrop-filter: blur(1rem)) {
   .primary-navigation {
     background: hsl(var(--clr-white) / 0.05);
@@ -435,12 +438,14 @@ section {
 
 .primary-navigation a {
   text-decoration: none;
+  color: hsl(var(--clr-white) / 0.75);
+  font-size: 14px;
 }
 
 .primary-navigation a>span {
   font-weight: 700;
   margin-right: 10px;
-  color: hsl(var(--clr-white) / 0.25);
+  color: hsl(var(--clr-white));
 }
 
 .mobile-nav-toggle {
