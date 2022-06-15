@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 -  Solution URL: [GitHub](https://github.com/ThomasAurelius/fm_react_space_tourism)
--  Live Site URL: [Live URL](https://thomasaurelius.github.io/fm_react_space_tourism/)
+-  Live Site URL: [Live URL](https://thomasaurelius.com/projects/react/space/)
 
 ## My process
 
