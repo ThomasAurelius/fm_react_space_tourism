@@ -8,7 +8,6 @@ const [visibility, setVisibility] = React.useState(false)
 
 const swapVisible = () => {
    setVisibility(!visibility)
-
 }
 
 let classes
@@ -18,8 +17,6 @@ if (visibility) {
    } else {
       classes = 'primary-navigation underline-indicators flex'
    }
-
-console.log(visibility)
 
    return (
       <>
