@@ -29,7 +29,7 @@ if (visibility) {
                <button onClick={swapVisible} id="mobile-nav-toggle" className="mobile-nav-toggle" aria-controls="primary-navigation"
                aria-expanded="false"><span className="sr-only">Menu</span></button>
                <ul id="primary-navigation"  className={classes}>
-                  <li className=""><a className="text-white uppercase letter-spacing-3" href="/"><span className='text-white'>00</span>Home</a>
+                  <li className=""><a className="text-white uppercase letter-spacing-3" href="./"><span className='text-white'>00</span>Home</a>
                   </li>
                   <li><a className="text-white uppercase letter-spacing-3" href="./destination"><span>01</span>Destination</a>
                   </li>
