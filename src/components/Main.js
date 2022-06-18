@@ -20,11 +20,13 @@ export default function Main() {
    return (
       <div>
          <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/projects/react/space" element={<Home />} />
+            
             <Route path="/destination" element={<Destination />} />
             <Route path="/destinationMars" element={<DestinationMars />} />
             <Route path="/destinationEuropa" element={<DestinationEuropa />} />
             <Route path="/destinationTitan" element={<DestinationTitan />} />
+
             <Route path="/crew" element={<Crew />} />
             <Route path="/crewEngineer" element={<CrewEngineer />} />
             <Route path="/crewPilot" element={<CrewPilot />} />
