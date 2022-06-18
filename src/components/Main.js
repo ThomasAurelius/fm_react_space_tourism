@@ -21,20 +21,20 @@ export default function Main() {
       <div>
          <Routes>
             <Route path="/projects/react/space" element={<Home />} />
-            
-            <Route path="/destination" element={<Destination />} />
-            <Route path="/destinationMars" element={<DestinationMars />} />
-            <Route path="/destinationEuropa" element={<DestinationEuropa />} />
-            <Route path="/destinationTitan" element={<DestinationTitan />} />
 
-            <Route path="/crew" element={<Crew />} />
-            <Route path="/crewEngineer" element={<CrewEngineer />} />
-            <Route path="/crewPilot" element={<CrewPilot />} />
-            <Route path="/crewSpecialist" element={<CrewSpecialist />} />
+            <Route path="/projects/react/space/destination" element={<Destination />} />
+            <Route path="/projects/react/space/destinationMars" element={<DestinationMars />} />
+            <Route path="/projects/react/space/destinationEuropa" element={<DestinationEuropa />} />
+            <Route path="/projects/react/space/destinationTitan" element={<DestinationTitan />} />
 
-            <Route path="/technology" element={<Technology />} />  
-            <Route path="/technologySpaceport" element={<TechnologySpaceport />} />  
-            <Route path="/technologyVehicle" element={<TechnologyVehicle />} />         
+            <Route path="/projects/react/space/crew" element={<Crew />} />
+            <Route path="/projects/react/space/crewEngineer" element={<CrewEngineer />} />
+            <Route path="/projects/react/space/crewPilot" element={<CrewPilot />} />
+            <Route path="/projects/react/space/crewSpecialist" element={<CrewSpecialist />} />
+
+            <Route path="/projects/react/space/technology" element={<Technology />} />  
+            <Route path="/projects/react/space/technologySpaceport" element={<TechnologySpaceport />} />  
+            <Route path="/projects/react/space/technologyVehicle" element={<TechnologyVehicle />} />         
          </Routes>
       </div>
    )
