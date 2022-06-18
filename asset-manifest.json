@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fm_react_space_tourism/static/css/main.f8275ee3.css",
-    "main.js": "/fm_react_space_tourism/static/js/main.91582ed2.js",
+    "main.js": "/fm_react_space_tourism/static/js/main.32df1515.js",
     "static/js/787.04bb8af8.chunk.js": "/fm_react_space_tourism/static/js/787.04bb8af8.chunk.js",
     "static/media/image-victor-glover.png": "/fm_react_space_tourism/static/media/image-victor-glover.8a9a5424588b73ec61c2.png",
     "static/media/image-anousheh-ansari.png": "/fm_react_space_tourism/static/media/image-anousheh-ansari.2d647128496ddc638acd.png",
@@ -31,11 +31,11 @@
     "static/media/logo.svg": "/fm_react_space_tourism/static/media/logo.565f7f2c0534403f11b71994f4311210.svg",
     "static/media/icon-hamburger.svg": "/fm_react_space_tourism/static/media/icon-hamburger.5273efa7c50e96ef3e51.svg",
     "main.f8275ee3.css.map": "/fm_react_space_tourism/static/css/main.f8275ee3.css.map",
-    "main.91582ed2.js.map": "/fm_react_space_tourism/static/js/main.91582ed2.js.map",
+    "main.32df1515.js.map": "/fm_react_space_tourism/static/js/main.32df1515.js.map",
     "787.04bb8af8.chunk.js.map": "/fm_react_space_tourism/static/js/787.04bb8af8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f8275ee3.css",
-    "static/js/main.91582ed2.js"
+    "static/js/main.32df1515.js"
   ]
 }
